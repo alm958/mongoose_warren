@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./master.css">
+        <script src="jquery.js"></script>
+        <script src="main.js"></script>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAA
+        AAAAAACKblAAAAAAAP///wADAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAERAAAAAAARERAAAAAAAAERAAAAAAAAABAAAAAAAAAAAAACIiIiIgAAACIiIi
+        IAAAACIiIiIiAAAAIiIiIiIgAAIiIiIiIiIAAiIiAAIjIAACIAAAACIAAAAAAAACIAAAAAAAACAg
+        AAAQAAACACAAAREAAAAAAAARERAAAAAAARHgBwAAwAMAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA" rel="icon" type="image/x-icon" />
+        <title>The Warren List</title>
+    </head>
+    <body>
+        <h2>The Warren</h2>
+        <table>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>DOB</th>
+                <th>Actions</th>
+              </tr>
+              <% for (var rabbit in allRabbits) { %>
+              <tr>
+                <th><%= allRabbits[rabbit]._id %></th>
+                <th><%= allRabbits[rabbit].name %></th>
+                <th><%= allRabbits[rabbit].breed %></th>
+                <th><%= allRabbits[rabbit].dob %></th>
+                <th>put action buttons here</th>
+              </tr>
+              <% } %>
+            </table>
+    </body>
+</html>

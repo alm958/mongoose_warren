@@ -1,5 +1,8 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+
+    $('.warren').load("warrenlist.ejs");
+
     $('.form').on('submit', function(e){
         e.preventDefault();
         console.log('form submited');
@@ -11,10 +14,10 @@ $( document ).ready(function() {
                 console.log(response);
                 var content = $('<div />', {
                     html: [
-                        $('<h4 />', {text: "Name : "+response.data.name}),
-                        $('<h4 />', {text: "Breed : "+response.data.breed}),
-                        $('<h4 />', {text: "DOB : "+String(response.data.dob)}),
-                        $('<button class="reset" />', {text: "Return to the start page"}),
+                        $('<h4 />', {text: "Name : "+response.name}),
+                        $('<h4 />', {text: "Breed : "+response.breed}),
+                        $('<h4 />', {text: "DOB : "+response.dob}),
+                        '<button class="reset" type="button" name="button">Return to start page</button>'
                     ]
                 });
                 console.log("hi");
@@ -28,6 +31,7 @@ $( document ).ready(function() {
             }
         })
     })
+
     $('.warren').on('click','button.reset',function(e){
         e.preventDefault();
         $('form').toggleClass("hide");
@@ -35,4 +39,6 @@ $( document ).ready(function() {
         $('.warren').empty();
         document.getElementById("newrabbitform").reset();
     })
+
+
 });
